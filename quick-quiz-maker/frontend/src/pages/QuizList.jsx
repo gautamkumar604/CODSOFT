@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { BookOpen, Clock, User, Loader2 } from 'lucide-react';
+const API_URL = import.meta.env.VITE_API_URL;
 
 const QuizList = () => {
   const [quizzes, setQuizzes] = useState([]);
@@ -14,7 +15,7 @@ const QuizList = () => {
 
   const fetchQuizzes = async () => {
     try {
-      const response = await axios.get('/api/quizzes');
+      const response = axios.get(`${API_URL}/api/quizzes`);
       setQuizzes(response.data);
     } catch (err) {
       setError('Failed to load quizzes');
