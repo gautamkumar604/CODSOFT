@@ -8,10 +8,18 @@ const path = require('path');
 
 const app = express();
 const PORT = process.env.PORT || 5001;
-const JWT_SECRET = 'your-secret-key-change-in-production';
+// const JWT_SECRET = 'your-secret-key-change-in-production';
+const JWT_SECRET = process.env.JWT_SECRET;
 
 // Middleware
-app.use(cors());
+// app.use(cors());
+app.use(cors({
+  origin: [
+    "http://localhost:3000",
+    "https://quickquizemaker.vercel.app"
+  ],
+  credentials: true
+}));
 app.use(bodyParser.json());
 
 // Data storage paths
