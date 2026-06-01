@@ -14,14 +14,15 @@ const QuizList = () => {
   }, []);
 
   const fetchQuizzes = async () => {
-    try {
-      const response = axios.get(`${API_URL}/api/quizzes`);
-      setQuizzes(response.data);
-    } catch (err) {
-      setError('Failed to load quizzes');
-    } finally {
-      setLoading(false);
-    }
+  try {
+    const response = await axios.get(`${API_URL}/api/quizzes`);
+    setQuizzes(response.data);
+  } catch (err) {
+    console.error(err);
+    setError('Failed to load quizzes');
+  } finally {
+    setLoading(false);
+  }
   };
 
   if (loading) {
