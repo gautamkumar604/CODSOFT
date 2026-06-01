@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { ChevronRight, ChevronLeft, CheckCircle } from 'lucide-react';
+const API_URL = import.meta.env.VITE_API_URL;
 
 const TakeQuiz = () => {
   const { id } = useParams();
@@ -18,7 +19,9 @@ const TakeQuiz = () => {
 
   const fetchQuiz = async () => {
     try {
-      const response = await axios.get(`/api/quizzes/${id}`);
+      const response = await axios.get(
+        `${API_URL}/api/quizzes/${id}`
+      );
       setQuiz(response.data);
       setAnswers({});
     } catch (err) {

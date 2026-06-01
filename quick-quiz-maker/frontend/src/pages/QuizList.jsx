@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { BookOpen, Clock, User, Loader2 } from 'lucide-react';
 const API_URL = import.meta.env.VITE_API_URL;
-
 const QuizList = () => {
   const [quizzes, setQuizzes] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -15,16 +14,19 @@ const QuizList = () => {
 
   const fetchQuizzes = async () => {
   try {
-    const response = await axios.get(`${API_URL}/api/quizzes`);
+    const response = await axios.get(
+      `${import.meta.env.VITE_API_URL}/api/quizzes`
+    );
+
     setQuizzes(response.data);
   } catch (err) {
     console.error(err);
-    setError('Failed to load quizzes');
+    setError("Failed to load quizzes");
   } finally {
     setLoading(false);
   }
   };
-
+  
   if (loading) {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">

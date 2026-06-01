@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import axios from 'axios';
 import { UserPlus } from 'lucide-react';
+const API_URL = import.meta.env.VITE_API_URL;
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -28,7 +29,8 @@ const Register = () => {
     setLoading(true);
 
     try {
-      const response = await axios.post('/api/auth/register', formData);
+      const response = await axios.post(
+        `${API_URL}/api/auth/register`,formData);
       login(response.data.token, response.data.user);
       navigate('/');
     } catch (err) {

@@ -70,7 +70,7 @@ const CreateQuiz = () => {
       const token = localStorage.getItem("token");
 
       await axios.post(
-        "http://localhost:5001/api/quizzes",
+         `${API_URL}/api/quizzes`,
         {
           title,
           description,

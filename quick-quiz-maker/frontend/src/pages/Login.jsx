@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import axios from 'axios';
 import { LogIn } from 'lucide-react';
-
+const API_URL = import.meta.env.VITE_API_URL;
 const Login = () => {
   const [formData, setFormData] = useState({
     email: '',
@@ -27,7 +27,10 @@ const Login = () => {
     setLoading(true);
 
     try {
-      const response = await axios.post('/api/auth/login', formData);
+      const response = await axios.post(
+        `${API_URL}/api/auth/login`,
+        formData
+      );
       login(response.data.token, response.data.user);
       navigate('/');
     } catch (err) {
