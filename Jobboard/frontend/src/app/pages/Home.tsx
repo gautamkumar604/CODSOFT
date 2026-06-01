@@ -40,9 +40,9 @@ export default function Home() {
                 {/* Background glow effects */}
                 <div className="absolute inset-0 bg-blue-400 rounded-full filter blur-3xl opacity-20 transform scale-90 animate-pulse"></div>
                 <img
-                  src="/img1.png"
+                  src="/img2.png"
                   alt="Job Board Platform"
-                  className="relative z-10 w-full h-auto object-contain rounded-2xl shadow-2xl transform hover:scale-[1.02] transition duration-500 ease-in-out"
+                  className="relative z-10 w-full h-auto object-contain rounded-2xl transform hover:scale-[1.02] transition duration-500 ease-in-out"
                 />
               </div>
             </div>
