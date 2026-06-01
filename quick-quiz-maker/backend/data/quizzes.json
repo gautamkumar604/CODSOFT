@@ -1,0 +1,22 @@
+[
+  {
+    "id": "1780306003875",
+    "title": "java script",
+    "description": "js related basic questions.",
+    "questions": [
+      {
+        "question": "What is a Promise used for in JavaScript?",
+        "options": [
+          "Styling ",
+          "Asynchronous operations ",
+          "Loops ",
+          "Variables"
+        ],
+        "correctAnswer": 1
+      }
+    ],
+    "createdBy": "1780304560196",
+    "createdByUsername": "gautam101",
+    "createdAt": "2026-06-01T09:26:43.875Z"
+  }
+]
